@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session, joinedload
 from typing import List, Optional
 from ..models.product import Product
-from ..schemas.product import ProductCreate
+from ..schemas.product import ProductCreate, ProductUpdate
 
 class ProductRepository:
     def __init__(self, db: Session):
@@ -40,3 +40,14 @@ class ProductRepository:
             .filter(Product.id.in_(product_ids))
             .all()
         )
+    
+    def update_product(self, product_id: int, product_data: ProductUpdate) -> Product:
+        db_product = self.db.query(Product).filter(Product.id == product_id).first()   
+        update_data = product_data.model_dump(exclude_unset=True)
+
+        for field, value in update_data.items():
+            setattr(db_product, field, value)
+        self.db.commit()
+        self.db.refresh(db_product)
+        
+        return db_product

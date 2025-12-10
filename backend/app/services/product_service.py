@@ -4,7 +4,8 @@ from fastapi import status, HTTPException
 
 from ..repositories.category_repository import CategoryRepository
 from ..repositories.product_repository import ProductRepository
-from ..schemas.product import ProductResponse, ProductListResponse, ProductCreate
+from ..schemas.product import ProductResponse, ProductListResponse, ProductCreate, ProductUpdate
+from ..models.product import Product
 
 class ProductService:
     def __init__(self, db: Session):
@@ -45,3 +46,13 @@ class ProductService:
             )
         product = self.product_repository.create(product_data)
         return ProductResponse.model_validate(product)
+    
+    def update_product(self, product_id: int, product_data: ProductUpdate):
+        product = self.product_repository.get_by_id(product_id)
+        if not product:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Product with id {product_id} not found"
+            )
+        product_update = self.product_repository.update_product(product_id, product_data)        
+        return product_update

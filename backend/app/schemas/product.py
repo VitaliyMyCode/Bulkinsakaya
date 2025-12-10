@@ -13,6 +13,13 @@ class ProductBase(BaseModel):
 class ProductCreate(ProductBase):
     pass
 
+class ProductUpdate(ProductBase):
+    name: str | None = None
+    description: str | None = None
+    price: float | None = None
+    category_id: int | None = None
+    image_url: Optional[str] | None = None
+
 class ProductResponse(BaseModel):
     id: int = Field(..., description="Unique product ID")
     name: str
