@@ -9,8 +9,8 @@
     <div class="max-w-7xl mx-auto px-4 py-8">
       <!-- Заголовок -->
       <div class="mb-8">
-        <h1 class="text-4xl font-extrabold text-black mb-2">Product Catalog</h1>
-        <p class="text-gray-500">Discover our amazing products</p>
+        <h1 class="text-4xl font-extrabold text-black mb-2">Каталог</h1>
+        <p class="text-gray-500">Самые вкусные булки</p>
       </div>
 
       <div class="flex gap-8">
@@ -25,7 +25,7 @@
           <div class="mb-6 flex items-center justify-between">
             <p class="text-gray-700">
               <span class="font-bold">{{ productsStore.productsCount }}</span>
-              {{ productsStore.productsCount === 1 ? 'product' : 'products' }} found
+              {{ productsStore.productsCount === 1 ? 'продукт' : 'продуктов' }} найден
             </p>
 
             <!-- Кнопка сброса фильтра -->
@@ -34,7 +34,7 @@
               @click="productsStore.clearCategoryFilter"
               class="text-sm text-gray-500 hover:text-black transition-colors font-medium"
             >
-              Clear filter
+              Убрать фильтр
             </button>
           </div>
 
@@ -66,7 +66,7 @@
           <!-- Пустое состояние -->
           <div v-else class="text-center py-12">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="frontend/src/assets/bulka.png"
               class="h-16 w-16 mx-auto text-gray-400 mb-4"
               fill="none"
               viewBox="0 0 24 24"

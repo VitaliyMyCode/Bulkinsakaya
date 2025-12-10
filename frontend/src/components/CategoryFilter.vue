@@ -6,7 +6,7 @@
 
 <template>
   <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
-    <h2 class="text-2xl font-bold text-black mb-6">Categories</h2>
+    <h2 class="text-2xl font-bold text-black mb-6">Категории</h2>
 
     <!-- Список категорий -->
     <ul class="space-y-2">
@@ -21,7 +21,7 @@
               : 'bg-gray-50 hover:bg-gray-100 text-gray-700',
           ]"
         >
-          All Categories
+          Все категории
           <span v-if="!productsStore.selectedCategory" class="float-right">
             ({{ totalProductsCount }})
           </span>

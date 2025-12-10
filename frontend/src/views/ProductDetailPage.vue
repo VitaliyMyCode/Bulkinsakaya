@@ -13,7 +13,7 @@
         class="flex items-center text-gray-600 hover:text-black transition-colors mb-8 font-medium text-lg"
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="frontend/src/assets/bulka.png"
           class="h-6 w-6 mr-2"
           fill="none"
           viewBox="0 0 24 24"
@@ -94,7 +94,7 @@
                 :disabled="adding"
                 class="w-full bg-black text-white py-4 px-6 text-lg font-semibold rounded-none hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {{ adding ? 'Adding to cart...' : 'Add to Cart' }}
+                {{ adding ? 'Добавление в корзину...' : 'Добавить' }}
               </button>
 
               <!-- Уведомление об успешном добавлении -->

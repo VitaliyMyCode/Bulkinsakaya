@@ -56,3 +56,4 @@ class ProductService:
             )
         product_update = self.product_repository.update_product(product_id, product_data)        
         return product_update
+    

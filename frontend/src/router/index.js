@@ -49,7 +49,7 @@ const router = createRouter({
 
 // Обновление заголовка страницы при навигации
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'FastAPI Shop'
+  document.title = to.meta.title || 'Булкинская'
   next()
 })
 
